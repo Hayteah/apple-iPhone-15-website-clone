@@ -3,6 +3,8 @@ import NavBar from "./components/NavBar";
 import Hero from "./components/Hero";
 import Highlights from "./components/Highlights";
 import Model from "./components/Model";
+import * as Sentry from "@sentry/react";
+import Features from "./components/Features";
 
 const App = () => {
   return (
@@ -10,9 +12,10 @@ const App = () => {
       <NavBar />
       <Hero />
       <Highlights />
-      <Model/>
+      <Model />
+      <Features/>
     </main>
   );
 };
 
-export default App;
+export default Sentry.withProfiler(App);
